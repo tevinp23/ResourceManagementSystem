@@ -169,7 +169,11 @@ class BookManagementSystem {
         }
     }
 
-    // Remove a book
+
+    /**
+     * Removes a book from the system.
+     * @param isbn ISBN of the book to remove
+     */
     public void removeBook(String isbn) {
         if (books.containsKey(isbn)) {
             books.remove(isbn);
@@ -179,7 +183,11 @@ class BookManagementSystem {
         }
     }
 
-    // Update book availability
+    /**
+     * Updates the availability of a book in the system.
+     * @param isbn ISBN of the book to update
+     * @param available true if the book is available, false if not
+     */
     public void updateBookAvailability(String isbn, boolean available) {
         Book book = books.get(isbn);
         if (book != null) {
@@ -190,7 +198,10 @@ class BookManagementSystem {
         }
     }
 
-    // View all books
+    /**
+     * Prints all the books in the system, with their details.
+     * If the system contains no books, a message indicating that is printed.
+     */
     public void viewAllBooks() {
         if (books.isEmpty()) {
             System.out.println("No books available in the system.");
@@ -201,7 +212,11 @@ class BookManagementSystem {
         }
     }
 
-    // Search for a book by ISBN
+    /**
+     * Searches for a book by its ISBN and prints out the book details if found.
+     * If the book is not found, a message indicating that is printed.
+     * @param isbn ISBN of the book to search for
+     */
     public void searchBookByIsbn(String isbn) {
         Book book = books.get(isbn);
         if (book != null) {
